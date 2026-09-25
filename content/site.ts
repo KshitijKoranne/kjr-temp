@@ -92,27 +92,6 @@ export const projects: Project[] = [
     liveUrl: "https://tilde-rss-reader.vercel.app",
   },
   {
-    slug: "world-time", name: "World Time", tagline: "Time zones without the maths. Drag one line and every city moves with it.",
-    platforms: ["iOS"], stack: ["Expo", "React Native", "TypeScript"], status: "IN REVIEW", year: 2026, color: "#FFD9C7",
-    shots: { p: ["p1", "p2", "p3"], dark: true },
-    problem: "Most world clocks show numbers, but not whether it is a good time to call someone.",
-    approach: "A 24-hour rule you drag with your thumb. Every city on your list moves with it, with day and night shown at a glance.",
-    outcome: "Built for iPhone and on its way to the App Store.",
-    metrics: [{ label: "Cities built in", value: "110+" }, { label: "Network calls", value: "0" }, { label: "Data collected", value: "None" }],
-    next: "Home screen widgets for the cities you check most.",
-  },
-  {
-    slug: "noted-it", name: "Noted It", tagline: "A private notes app. Lists, sketches, voice notes and reminders that stay on your device.",
-    platforms: ["iOS", "PWA"], stack: ["HTML", "JavaScript", "IndexedDB"], status: "SHIPPED", year: 2026, color: "#F6E7A6",
-    url: "noted-it.vercel.app", shots: { p: ["p3", "p1", "p2"] },
-    problem: "Most notes apps keep your notes on someone else's server.",
-    approach: "One HTML file with no build step and no dependencies. Notes live in the browser, work offline and can be locked with a PIN.",
-    outcome: "Released as open source, with an iPhone app built on the same core.",
-    metrics: [{ label: "Dependencies", value: "0" }, { label: "Network calls", value: "0" }, { label: "Locked notes", value: "AES-256" }],
-    next: "Optional sync to a folder you own.",
-    liveUrl: "https://noted-it.vercel.app",
-  },
-  {
     slug: "wisp", name: "Wisp", tagline: "Wallpapers made for your screens. Pick a look, download it in the right size.",
     platforms: ["PWA"], stack: ["Canvas", "PWA"], status: "SHIPPED", year: 2026, color: "#D9D3EC",
     url: "wisp-walls.vercel.app", shots: { d: "d1", p: ["p1"], lock: true },
@@ -134,21 +113,10 @@ export const projects: Project[] = [
     next: "Matching lock and home screen pairs.",
     liveUrl: "https://uuidwalls.vercel.app",
   },
-  {
-    slug: "talk", name: "Talk", tagline: "A call is just a link. Private video calls on a server we run ourselves.",
-    platforms: ["WEB", "SELF-HOSTED"], stack: ["LiveKit", "Next.js", "Coolify"], status: "SHIPPED", year: 2026, color: "#EDE3D1",
-    url: "talk.kjrlabs.in", shots: { d: "d1", p: ["p1"], bar: "#FAFAFA" },
-    problem: "Most meeting tools need an account or an app, and a third party sits in the middle of every call.",
-    approach: "Video, audio and screen sharing on a small server we rent and configure. Share a link and people are in, from any modern browser.",
-    outcome: "Runs on our own server. No account, no download.",
-    metrics: [{ label: "People per call", value: "Up to 10" }, { label: "Accounts needed", value: "0" }, { label: "Installs", value: "None" }],
-    next: "Recording to storage the team owns.",
-    liveUrl: "https://talk.kjrlabs.in",
-  },
 ];
 
 export const stats = [
-  { value: 15, suffix: "+", label: "products shipped", placeholder: true },
+  { value: 3, suffix: "", label: "products shipped" }, // ponytail: bump as apps ship
   { value: 4, suffix: " weeks", label: "typical time to a first usable version", placeholder: true },
   { value: 100, suffix: "%", label: "code ownership handed to clients" },
   { value: 14, suffix: "+", label: "years in quality assurance, so we test everything" },
@@ -260,8 +228,6 @@ export const stack = [
 
 export const labNotes = [
   { date: "2026-09-18", title: "Deleted 40% of a component library", body: "We replaced a modal library with the native dialog element. The bundle dropped and the focus trap got better.", placeholder: true },
-  { date: "2026-09-04", title: "RAG answers need a reviewer, not a disclaimer", body: "In VQ Desk every drafted answer shows its source and needs a person to approve it. That one rule made teams trust it.", placeholder: true },
-  { date: "2026-08-21", title: "Shipping a 2 MB iOS app", body: "World Time has no network calls and no third-party SDKs. Small apps get reviewed faster and break less.", placeholder: true },
 ];
 
 export const nav = [

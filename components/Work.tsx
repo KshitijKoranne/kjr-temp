@@ -34,7 +34,6 @@ export default function Work() {
               <span className="display relative z-10 whitespace-nowrap text-[clamp(2.6rem,7.4vw,8rem)] font-extrabold" style={{ transform: "translateX(calc(var(--p, 0) * 70vw))", opacity: "clamp(0, 1 - var(--p, 0) * 2.4, 1)" } as CSS}>shipped.</span>
             </h2>
           </div>
-          <p className="serif absolute inset-x-0 bottom-[9vh] text-center text-2xl md:text-3xl" style={{ opacity: "clamp(0, 1 - var(--p, 0) * 4, 1)" } as CSS}>(and a few still in the pipeline)</p>
 
           <div className="absolute bottom-8 left-5 z-30 max-w-[34ch] md:bottom-10 md:left-10" style={{ opacity: "clamp(0, (var(--p, 0) - .68) * 5, 1)", transform: "translateY(calc((1 - clamp(0, (var(--p, 0) - .68) * 5, 1)) * 20px))" } as CSS}>
             <p className="mono text-xs">{lead.platforms.join(" · ")} · <span className="text-signal">{lead.status}</span></p>
