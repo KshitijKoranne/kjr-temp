@@ -150,7 +150,6 @@ export default function Services() {
                 aria-controls={`svc-${i}`}
                 onClick={() => setActive(on ? -1 : i)}
                 onFocus={(e) => e.currentTarget.matches(":focus-visible") && setActive(i)}
-                data-cursor="View"
               >
                 <span className="mono text-sm">{String(i + 1).padStart(2, "0")}</span>
                 <span className="display text-[clamp(1.9rem,5.4vw,5.2rem)] leading-[0.95] transition-[font-variation-settings] duration-[var(--t-base)]" style={{ fontVariationSettings: on ? '"wght" 800, "wdth" 100' : '"wght" 450, "wdth" 85' }}>
@@ -158,9 +157,6 @@ export default function Services() {
                 </span>
                 <span className="hidden items-center justify-end gap-3 md:flex" aria-hidden={!on}>
                   <span className="text-right text-base leading-snug transition-[opacity,transform] duration-[var(--t-base)]" style={{ opacity: on ? 1 : 0, transform: on ? "none" : "translateX(30px)" }}>{s.body}</span>
-                  <svg width="40" height="40" viewBox="0 0 40 40" className="shrink-0 transition-transform duration-[var(--t-base)]" style={{ transform: on ? "translate(4px,-4px)" : "none" }}>
-                    <path d="M8 32 L32 8 M14 8 H32 V26" fill="none" stroke="currentColor" strokeWidth="3" pathLength={1} strokeDasharray="1" style={{ strokeDashoffset: on ? 0 : 1, transition: "stroke-dashoffset 420ms var(--e-snappy)" }} />
-                  </svg>
                 </span>
                 <span className="mono text-xl md:hidden" aria-hidden>{on ? "−" : "+"}</span>
               </button>

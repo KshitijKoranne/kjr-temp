@@ -15,8 +15,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: p.name, description: p.tagline, alternates: { canonical: `/work/${p.slug}/` }, openGraph: { title: `${p.name} | KJR Labs`, description: p.tagline, url: `/work/${p.slug}/` } };
 }
 
-const layers = ["UI", "API", "DATA", "DEPLOY"];
-
 export default async function Case({ params }: Props) {
   const { slug } = await params;
   const i = projects.findIndex((x) => x.slug === slug);
@@ -50,20 +48,6 @@ export default async function Case({ params }: Props) {
           <div>
             <p className="max-w-[60ch] text-lg leading-relaxed">{p.approach}</p>
             <ul className="mono mt-6 flex flex-wrap gap-2 text-xs">{p.stack.map((s) => <li key={s} className="rounded-full px-3 py-1.5 shadow-[inset_0_0_0_1.5px_var(--color-ink)]">{s}</li>)}</ul>
-            <svg viewBox="0 0 640 360" className="mt-10 w-full max-w-[760px]" role="img" aria-label={`Exploded architecture of ${p.name}: UI, API, data and deploy layers`}>
-              {layers.map((l, k) => {
-                const y = 40 + k * 78;
-                return (
-                  <g key={l}>
-                    <path d={`M${120 + k * 22} ${y} l180 -30 l180 30 l-180 30 z`} fill={k % 2 ? "#FAF7F0" : p.color} stroke="#121212" strokeWidth="1.5" />
-                    <line x1={480 + k * 22} y1={y} x2="590" y2={y} stroke="#121212" strokeDasharray="3 4" />
-                    <text x="596" y={y + 4} fontSize="13" fontFamily="monospace" fill="#121212">{l}</text>
-                    <text x={300 + k * 22} y={y + 4} fontSize="12" fontFamily="monospace" textAnchor="middle" fill="#121212">{[p.platforms[0], "server logic", p.stack.find((s) => /sql|db|rag|indexeddb/i.test(s)) ?? "storage", p.stack.at(-1)][k]}</text>
-                  </g>
-                );
-              })}
-              <line x1="300" y1="40" x2="300" y2="274" stroke="#FF4F1A" strokeWidth="2" strokeDasharray="2 5" />
-            </svg>
           </div>
         </section>
 
