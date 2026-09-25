@@ -18,7 +18,7 @@ function Row({ r, on, next }: { r: string[]; on: boolean; next: boolean }) {
   const text = useScramble(r.join("  |  "), on, 380);
   return (
     <li className="relative flex items-center gap-4 border-b border-white/20 py-2.5">
-      <span className="flex-1 whitespace-pre" style={{ visibility: on ? "visible" : "hidden" }}>{text}</span>
+      <span className="flex-1 whitespace-pre-wrap md:whitespace-pre" style={{ visibility: on ? "visible" : "hidden" }}>{text}</span>
       <span className={`shrink-0 rounded border-2 border-signal bg-signal px-2 py-0.5 font-bold text-ink ${on ? "stamp" : "invisible"}`}>✓ passed</span>
       {next && <span className="absolute inset-y-0 left-0 flex items-center opacity-70">running next check<span className="caret" /></span>}
     </li>
@@ -26,21 +26,21 @@ function Row({ r, on, next }: { r: string[]; on: boolean; next: boolean }) {
 }
 
 export default function Quality() {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [count, setCount] = useState(0);
-  useScrollProgress(ref, (p) => setCount(Math.min(rows.length, Math.max(0, Math.floor((p - 0.2) * 14)))));
+  useScrollProgress(ref, (p) => setCount(Math.min(rows.length, Math.max(0, Math.floor((p - 0.1) * 16)))));
 
   return (
-    <section ref={ref} data-bg="#2430D6" className="on-dark bg-blueprint blueprint-grid relative overflow-hidden px-5 py-28 text-white md:px-10 md:py-40" aria-labelledby="quality-title">
+    <section data-bg="#2430D6" className="on-dark bg-blueprint blueprint-grid relative overflow-hidden px-5 py-28 text-white md:px-10 md:py-40" aria-labelledby="quality-title">
       <p className="eyebrow mb-8">Quality</p>
       <h2 id="quality-title" className="display max-w-[18ch] text-[clamp(2.4rem,6.6vw,6.8rem)] font-extrabold">
         Built by a developer. <span className="serif font-normal">Checked by</span> a quality professional.
       </h2>
 
-      <div className="relative mt-16">
+      <div ref={ref} className="relative mt-16">
         <div className="mono mb-2 flex justify-between text-[11px] opacity-80"><span>RELEASE CHECKS · v1.2</span><span>{count}/{rows.length} checks</span></div>
         <div className="overflow-x-auto rounded-xl border border-white/40 bg-[#1b25b0] p-4 md:p-6">
-          <ol className="mono min-w-[560px] text-[12px] md:text-sm" aria-label="Example release checklist">
+          <ol className="mono md:min-w-[560px] text-[12px] md:text-sm" aria-label="Example release checklist">
             {rows.map((r, i) => <Row key={r[1]} r={r} on={i < count} next={i === count} />)}
           </ol>
         </div>

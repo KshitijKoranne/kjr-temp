@@ -24,15 +24,7 @@ function Visual({ kind }: { kind: string }) {
         <style>{`@keyframes shrinkbar{from{transform:scaleX(1)}to{transform:scaleX(.19)}}`}</style>
       </div>
     );
-  if (kind === "key")
-    return (
-      <div className="mono relative flex w-64 justify-between text-xs">
-        <span className="rounded-lg bg-paper px-3 py-6">us</span>
-        <span className="rounded-lg bg-ink px-3 py-6 text-bone">you</span>
-        <span className="absolute left-4 top-1/2 -translate-y-1/2 mono rounded bg-signal px-2 py-1 text-xs font-bold" style={{ animation: "handover 1.2s var(--e-snappy) 200ms both" }}>KEYS</span>
-        <style>{`@keyframes handover{to{transform:translateX(150px)}}`}</style>
-      </div>
-    );
+  if (kind === "key") return null;
   return (
     <div className="mono grid w-64 grid-cols-8 gap-1.5">
       {Array.from({ length: 32 }, (_, i) => <i key={i} className="size-6 rounded" style={{ background: "#121212", animation: `pass 300ms linear ${i * 30}ms both` }} />)}

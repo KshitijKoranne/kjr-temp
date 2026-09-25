@@ -42,7 +42,6 @@ export default function Periodic() {
               aria-pressed={flipped === i}
               onClick={() => setFlipped(flipped === i ? -1 : i)}
               style={{ "--i": i, "--r": `${(i % 5) * 7 - 14}deg` } as CSS}
-              data-cursor="Flip"
             >
               <span className="tile-in relative block size-full">
                 <span className="tile-face absolute inset-0 flex flex-col justify-between rounded-lg bg-paper p-2.5 shadow-[0_0_0_1.5px_var(--color-ink)] md:p-3">

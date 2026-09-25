@@ -14,7 +14,7 @@ const pieces: { k: keyof typeof fragments; fx: string; fy: string; fr: string; a
   { k: "phone", fx: "34vw", fy: "-34vh", fr: "12deg", ax: "29vw", ay: "14vh", fd: "1s" },
   { k: "terminal", fx: "-40vw", fy: "22vh", fr: "7deg", ax: "-27vw", ay: "25vh", fd: "2s" },
   { k: "chart", fx: "30vw", fy: "24vh", fr: "-11deg", ax: "37vw", ay: "26vh", fd: ".5s" },
-  { k: "form", fx: "-8vw", fy: "36vh", fr: "4deg", ax: "0vw", ay: "36vh", fd: "1.5s" },
+  { k: "form", fx: "-8vw", fy: "36vh", fr: "4deg", ax: "0vw", ay: "calc(6.5vw + 220px)", fd: "1.5s" },
 ];
 
 export default function CTA() {
