@@ -50,12 +50,12 @@ export default function Hero() {
           <div className="size-full" style={{ opacity: "clamp(0, (1 - var(--p, 0)) * 5, 1)" } as CSS}><div className="stack-in size-full origin-center scale-[.5] sm:scale-75 lg:scale-100"><Stack /></div></div>
         </div>
 
-        <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-start px-5 pt-28 md:justify-center md:px-10 md:pt-24" style={{ transform: "translateY(calc(var(--p, 0) * -14vh))", opacity: "clamp(0, 1 - var(--p, 0) * 1.8, 1)" } as CSS}>
+        <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-start px-5 pt-28 md:justify-center-safe md:px-10 md:pt-24" style={{ transform: "translateY(calc(var(--p, 0) * -14vh))", opacity: "clamp(0, 1 - var(--p, 0) * 1.8, 1)" } as CSS}>
           <p className="anim-fade-up mono flex items-center gap-2.5 text-sm" style={{ "--d": "600ms" } as CSS}>
             <i aria-hidden className="size-2 rounded-full bg-signal" />
             Software and design studio · Vadodara, India
           </p>
-          <h1 id="hero-title" className="display mt-5 text-[clamp(2.9rem,13vw,11.5rem)] md:text-[clamp(2.9rem,12vw,11.5rem)] font-extrabold" onPointerEnter={() => go && setRetype((n) => n + 1)}>
+          <h1 id="hero-title" className="display mt-5 text-[clamp(2.9rem,13vw,11.5rem)] md:text-[clamp(2.9rem,min(12vw,calc(29svh_-_110px)),11.5rem)] font-extrabold" onPointerEnter={() => go && setRetype((n) => n + 1)}>
             <span className="sr-only">We build software that actually ships.</span>
             <span aria-hidden>
               <span className="mask-line" style={{ "--i": 0, "--d": "900ms" } as CSS}><span>We build</span></span>
