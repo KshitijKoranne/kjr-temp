@@ -16,7 +16,7 @@ export const brand = {
 export const contact = {
   phone: { display: "+91 89800 15699", tel: "+918980015699" },
   whatsapp: { display: "+91 89800 15699", number: "918980015699" },
-  email: { value: "kjrlabs9@gmail.com" },
+  email: { value: "hello@kjrlabs.in" },
   tz: "Asia/Kolkata",
   hours: [
     { days: "Monday–Friday", time: "10:00 AM – 7:00 PM IST", open: "10:00", close: "19:00", dow: ["Mo", "Tu", "We", "Th", "Fr"] },

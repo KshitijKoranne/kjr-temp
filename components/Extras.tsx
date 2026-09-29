@@ -78,7 +78,7 @@ export default function Extras() {
   // Console greeting + Konami terminal mode.
   useEffect(() => {
     console.log("%cKJR LABS▍", "font:800 28px system-ui;color:#FF4F1A;background:#121212;padding:8px 14px;border-radius:6px");
-    console.log("%cSay hi: kjrlabs9@gmail.com · press ⌘K and type `help`.", "font:13px ui-monospace,monospace");
+    console.log("%cSay hi: hello@kjrlabs.in · press ⌘K and type `help`.", "font:13px ui-monospace,monospace");
     let i = 0;
     const key = (e: KeyboardEvent) => {
       i = e.key === KONAMI[i] ? i + 1 : e.key === KONAMI[0] ? 1 : 0;

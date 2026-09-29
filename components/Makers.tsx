@@ -1,16 +1,5 @@
 import { people } from "@/content/site";
 
-// ponytail: duotone SVG stand-in portrait. Drop a real photo in with `filter: grayscale(1) contrast(1.1)` + mix-blend-multiply over Bone to keep the style.
-const Portrait = () => (
-  <svg viewBox="0 0 400 500" className="size-full" aria-hidden>
-    <rect width="400" height="500" fill="#121212" />
-    <circle cx="200" cy="190" r="86" fill="#F2EFE8" />
-    <path d="M60 500 C 70 360, 150 300, 200 300 S 330 360, 340 500 Z" fill="#F2EFE8" />
-    <rect width="400" height="500" fill="url(#dots)" opacity=".35" />
-    <defs><pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.2" fill="#121212" /></pattern></defs>
-  </svg>
-);
-
 export default function Makers() {
   const p = people[0];
   return (
@@ -23,7 +12,7 @@ export default function Makers() {
           {p.first}
         </p>
         <div className="relative z-10 ml-[6%] aspect-[4/5] w-[82%] overflow-hidden rounded-sm">
-          <div className="size-full transition-transform duration-[var(--t-slow)] ease-[var(--e-snappy)] group-hover:scale-105"><Portrait /></div>
+          <div className="size-full transition-transform duration-[var(--t-slow)] ease-[var(--e-snappy)] group-hover:scale-105"><img src="/kshitij.jpg" alt={p.name} width={800} height={1000} className="size-full object-cover" /></div>
           <p aria-hidden className="serif absolute right-3 top-4 z-20 max-w-[9em] rotate-[-6deg] text-right text-2xl leading-tight text-signal md:text-3xl">{p.note}</p>
         </div>
         <div className="relative z-10 max-w-[52ch] pb-2">

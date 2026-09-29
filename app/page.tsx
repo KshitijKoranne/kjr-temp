@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import Manifesto from "@/components/Manifesto";
+import Advert from "@/components/Advert";
 import Services from "@/components/Services";
 import Work from "@/components/Work";
 import BeforeAfter from "@/components/BeforeAfter";
@@ -24,6 +25,7 @@ export default function Home() {
       <Hero />
       <Marquee />
       <Manifesto />
+      <Advert />
       <Services />
       <Work />
       <BeforeAfter />
